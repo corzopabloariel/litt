@@ -1,0 +1,123 @@
+<div class="container"> 
+    <div class="panel-b">
+    <div class="row panel-title">
+        <div class="col-sm-3 "></div>
+        <div class="col-sm-6" style="border-bottom: 2px solid #769FCD;margin-bottom:20px"><h2 align="center">Domicilios</h2></div>
+        <div class="col-sm-3"></div>
+    </div>
+    <div class="form-d">
+        <h3 align="center">Domicilio Particular</h3>
+        <div class="form-group col-xs-12">
+            <input type="hidden" name="dni" value=""> <!-- VALUE HIDDEN DNI -->
+            <input class="form-control" type="text" placeholder="Calle y Numero" id="domicilio_calle_altura" > 
+            <input class="form-control" type="text" placeholder="Piso,Depto,Barrio,Mnz" id="domicilio_piso_depto">
+            <input class="form-control" type="text" placeholder="Codigo Postal" id="domicilio_cpa" value="">
+            <input class="form-control" type="text" placeholder="localidad" id="domicilio_localidad" value="">
+            <input class="form-control" type="text" placeholder="Provincia" id="domicilio_provincia" value="">
+
+        </div><br>
+        <h3 align="center">Domicilio Laboral</h3>
+        <div class="form-group col-xs-12">
+            <input class="form-control" type="text" placeholder="Calle y Numero" id="empleo_calle_altura" value="">
+            <input class="form-control" type="text" placeholder="Piso,Depto,Barrio,Mnz" id="empleo_piso_depto" value="">
+            <input class="form-control" type="text" placeholder="Codigo Postal" id="empleo_cpa" value="">
+            <input class="form-control" type="text" placeholder="localidad" id="empleo_localidad" value="">
+            <input class="form-control" type="text" placeholder="Provincia" id="empleo_provincia" value="">
+            <textarea placeholder="Observaciones" class="form-control" style="height:120px" id="observaciones"></textarea>
+        </div>
+        </div><br>
+        <div class="bottom-btns">
+            <a href="<?php echo config::$ui_main_comercio; ?>" style="color: #FFFFFF;"><button class="btn btn-primary btn-lg"  type="button">Cancelar</button></a>
+            <button class="btn btn-primary btn-lg next-btn" id="btn-finalizar">Alta Definitiva de Credito</button>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    
+    $("#btn-finalizar").on("click",function(){
+        
+    });
+    
+    function f_domicilios(){
+        $("#domicilio_calle_altura").val(window.litt_cliente_domicilio_calle_altura);
+        $("#domicilio_piso_depto").val(window.litt_cliente_domicilio_piso_depto);
+        $("#domicilio_cpa").val(window.litt_cliente_domicilio_cpa);
+        $("#domicilio_localidad").val(window.litt_cliente_domicilio_localidad);
+        $("#domicilio_provincia").val(window.litt_cliente_domicilio_provincia);
+        $("#empleo_calle_altura").val(window.litt_cliente_empleo_calle_altura);
+        $("#empleo_piso_depto").val(window.litt_cliente_empleo_piso_depto);
+        $("#empleo_cpa").val(window.litt_cliente_empleo_cpa);
+        $("#empleo_localidad").val(window.litt_cliente_empleo_localidad);
+        $("#empleo_provincia").val(window.litt_cliente_empleo_provincia);
+        $("#observaciones").val(window.litt_cliente_observaciones);
+        
+        $("#btn-finalizar").on("click",function(){
+            if(confirm("Esta dando de alta un credito de manera definitiva, desea continuar?")){
+                window.litt_cliente_domicilio_calle_altura = $("#domicilio_calle_altura").val();
+                window.litt_cliente_domicilio_piso_depto = $("#domicilio_piso_depto").val();
+                window.litt_cliente_domicilio_cpa = $("#domicilio_cpa").val();
+                window.litt_cliente_domicilio_localidad = $("#domicilio_localidad").val();
+                window.litt_cliente_domicilio_provincia = $("#domicilio_provincia").val();
+                window.litt_cliente_empleo_calle_altura = $("#empleo_calle_altura").val();
+                window.litt_cliente_empleo_piso_depto = $("#empleo_piso_depto").val();
+                window.litt_cliente_empleo_cpa = $("#empleo_cpa").val();
+                window.litt_cliente_empleo_localidad = $("#empleo_localidad").val();
+                window.litt_cliente_empleo_provincia = $("#empleo_provincia").val();
+                window.litt_cliente_observaciones = $("#observaciones").val();
+                guardarFinalizado();
+            }
+        });
+    }
+    
+    function guardarFinalizado(){
+        envio = {};
+        envio['apellido'] = window.litt_cliente_apellido;
+        envio['atraso_historico'] = window.litt_cliente_atraso_historico;
+        envio['comercio_credito'] = window.litt_cliente_comercio_credito;
+        envio['credito_vigente'] = window.litt_cliente_credito_vigente;
+        envio['dni'] = window.litt_cliente_dni;
+        envio['domicilio_calle_altura'] = window.litt_cliente_domicilio_calle_altura;
+        envio['domicilio_cpa'] = window.litt_cliente_domicilio_cpa;
+        envio['domicilio_localidad'] = window.litt_cliente_domicilio_localidad;
+        envio['domicilio_piso_depto'] = window.litt_cliente_domicilio_piso_depto;
+        envio['domicilio_provincia'] = window.litt_cliente_domicilio_provincia;
+        envio['empleo_calle_altura'] = window.litt_cliente_empleo_calle_altura;
+        envio['empleo_cpa'] = window.litt_cliente_empleo_cpa;
+        envio['empleo_empresa'] = window.litt_cliente_empleo_empresa;
+        envio['empleo_localidad'] = window.litt_cliente_empleo_localidad;
+        envio['empleo_piso_depto'] = window.litt_cliente_empleo_piso_depto;
+        envio['empleo_provincia'] = window.litt_cliente_empleo_provincia;
+        envio['empleo_sueldo'] = window.litt_cliente_empleo_sueldo;
+        envio['empleo_telefono'] = window.litt_cliente_empleo_telefono;
+        envio['estado_mora'] = window.litt_cliente_estado_mora;
+        envio['fecha_nacimiento'] = window.litt_cliente_fecha_nacimiento;
+        envio['id'] = window.litt_cliente_id;
+        envio['mail'] = window.litt_cliente_mail;
+        envio['nombre'] = window.litt_cliente_nombre;
+        envio['observaciones'] = window.litt_cliente_observaciones;
+        envio['referido_nombre'] = window.litt_cliente_referido_nombre;
+        envio['referido_parentesco'] = window.litt_cliente_referido_parentesco;
+        envio['referido_telefono_celular'] = window.litt_cliente_referido_telefono_celular;
+        envio['referido_telefono_fijo'] = window.litt_cliente_referido_telefono_fijo;
+        envio['telefono_celular'] = window.litt_cliente_telefono_celular;
+        envio['telefono_fijo'] = window.litt_cliente_telefono_fijo;
+        // credito
+        envio['credito_cuotas'] = window.litt_credito_cuotas;
+        envio['credito_monto'] = window.litt_credito_monto;
+        envio['credito_plan'] = window.litt_credito_plan;
+        envio['credito_producto_designacion'] = window.litt_credito_producto_designacion;
+        envio['credito_score'] = window.litt_cliente_score;
+        
+        send("crearCredito",envio,function(msg){
+            window.msg = msg;
+            if(msg.data["exito"]){
+                $("#p8").hide();
+                $("#p9").show();
+            } else { alert("Hubo un error al guardar el credito, reintente"); }
+        }, function(msg){
+            window.msg = msg;
+            alert("Hubo un error al guardar el credito, reintente");
+        });
+    }
+</script>

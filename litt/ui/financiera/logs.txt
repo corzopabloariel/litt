@@ -1,0 +1,82 @@
+15 03 2018 09:03:13 El Archivo logs.txt se ha creado
+15 03 2018 18:03:56 El Archivo logs.txt se ha modificado
+15 03 2018 22:03:27 El Archivo logs.txt se ha modificado
+16 03 2018 00:03:21 El Archivo logs.txt se ha modificado
+16 03 2018 08:03:52 :: ID USER: 22 (LOG) - Linux
+16 03 2018 08:03:03 :: ID USER: 22 (LOG) - Linux
+16 03 2018 08:03:03 :: ID USER: 22 (LOG) - Linux
+16 03 2018 09:03:34 :: ID USER: 22 (LOG) - Linux
+16 03 2018 09:03:58 :: ID USER: 22 (LOG) - Linux
+16 03 2018 10:03:33 :: ID USER: 22 (LOG) - Linux
+16 03 2018 10:03:30 :: ID USER: 22 (LOG) - Linux
+16 03 2018 11:03:38 :: ID USER: 22 (LOG) - Linux
+16 03 2018 11:03:39 :: ID USER: 22 (LOG) - Linux
+16 03 2018 18:03:42 :: ID USER: 22 (LOG) - Linux
+16 03 2018 19:03:09 :: ID USER: 22 (LOG) - Linux
+16 03 2018 20:03:25 :: ID USER: 22 (LOG) - Linux
+16 03 2018 20:03:40 :: ID USER: 22 (LOG) - Linux
+16 03 2018 23:03:39 :: ID USER: 22 (LOG) - Linux
+17 03 2018 00:03:07 :: ID USER: 22 (LOG) - Linux
+17 03 2018 08:03:01 :: ID USER: 22 (LOG) - Linux
+17 03 2018 08:03:02 :: ID USER: 22 (LOG) - Linux
+17 03 2018 10:03:45 :: ID USER: 22 (LOG) - Linux riddlestandard 2.6.32-042stab127.2 #1 SMP Thu Jan 4 16:41:44 MSK 2018 x86_64
+17 03 2018 11:03:12 :: ID USER: 22 (LOG) - Linux riddlestandard 2.6.32-042stab127.2 #1 SMP Thu Jan 4 16:41:44 MSK 2018 x86_64
+17 03 2018 11:03:32 :: ID USER: 22 (LOG) - Linux riddlestandard 2.6.32-042stab127.2 #1 SMP Thu Jan 4 16:41:44 MSK 2018 x86_64
+17 03 2018 12:03:21 :: ID USER: 22 (LOG) - Linux riddlestandard 2.6.32-042stab127.2 #1 SMP Thu Jan 4 16:41:44 MSK 2018 x86_64
+17 03 2018 12:03:43 :: ID USER: 22 (LOG) - Linux riddlestandard 2.6.32-042stab127.2 #1 SMP Thu Jan 4 16:41:44 MSK 2018 x86_64
+17 03 2018 13:03:39 :: ID USER: 22 (LOG) - Linux riddlestandard 2.6.32-042stab127.2 #1 SMP Thu Jan 4 16:41:44 MSK 2018 x86_64
+17 03 2018 16:03:10 :: ID USER: 22 (LOG) - Linux riddlestandard 2.6.32-042stab127.2 #1 SMP Thu Jan 4 16:41:44 MSK 2018 x86_64
+17 03 2018 18:03:07 :: ID USER: 22 (LOG) - Linux riddlestandard 2.6.32-042stab127.2 #1 SMP Thu Jan 4 16:41:44 MSK 2018 x86_64
+17 03 2018 18:03:36 :: ID USER: 22 (LOG) - Linux riddlestandard 2.6.32-042stab127.2 #1 SMP Thu Jan 4 16:41:44 MSK 2018 x86_64
+17 03 2018 19:03:56 :: ID USER: 22 (LOG) - Linux riddlestandard 2.6.32-042stab127.2 #1 SMP Thu Jan 4 16:41:44 MSK 2018 x86_64
+17 03 2018 19:03:14 :: ID USER: 22 (LOG) - Linux riddlestandard 2.6.32-042stab127.2 #1 SMP Thu Jan 4 16:41:44 MSK 2018 x86_64
+17 03 2018 19:03:57 :: ID USER: 22 (LOG) - Linux riddlestandard 2.6.32-042stab127.2 #1 SMP Thu Jan 4 16:41:44 MSK 2018 x86_64
+17 03 2018 20:03:18 :: ID USER: 22 (LOG) - Linux riddlestandard 2.6.32-042stab127.2 #1 SMP Thu Jan 4 16:41:44 MSK 2018 x86_64
+18 03 2018 00:03:31 :: ID USER: 22 (LOG) - Linux riddlestandard 2.6.32-042stab127.2 #1 SMP Thu Jan 4 16:41:44 MSK 2018 x86_64
+18 03 2018 10:03:25 :: ID USER: 22 (LOG) - Linux riddlestandard 2.6.32-042stab127.2 #1 SMP Thu Jan 4 16:41:44 MSK 2018 x86_64
+18 03 2018 20:03:26 :: ID USER: 22 (LOG) - Linux riddlestandard 2.6.32-042stab127.2 #1 SMP Thu Jan 4 16:41:44 MSK 2018 x86_64
+18 03 2018 20:03:26 :: ID USER: 22 (LOG) - Linux riddlestandard 2.6.32-042stab127.2 #1 SMP Thu Jan 4 16:41:44 MSK 2018 x86_64
+18 03 2018 20:03:29 :: ID USER: 22 (LOG) - Linux riddlestandard 2.6.32-042stab127.2 #1 SMP Thu Jan 4 16:41:44 MSK 2018 x86_64
+18 03 2018 20:03:54 :: ID USER: 22 (LOG) - Linux riddlestandard 2.6.32-042stab127.2 #1 SMP Thu Jan 4 16:41:44 MSK 2018 x86_64
+18 03 2018 22:03:07 :: ID USER: 22 (LOG) - Linux riddlestandard 2.6.32-042stab127.2 #1 SMP Thu Jan 4 16:41:44 MSK 2018 x86_64
+18 03 2018 22:03:42 :: ID USER: 22 (LOG) - Linux riddlestandard 2.6.32-042stab127.2 #1 SMP Thu Jan 4 16:41:44 MSK 2018 x86_64
+18 03 2018 22:03:25 :: ID USER: 22 (LOG) - Linux riddlestandard 2.6.32-042stab127.2 #1 SMP Thu Jan 4 16:41:44 MSK 2018 x86_64
+19 03 2018 00:03:54 :: ID USER: 22 (LOG) - Linux riddlestandard 2.6.32-042stab127.2 #1 SMP Thu Jan 4 16:41:44 MSK 2018 x86_64
+19 03 2018 09:03:20 :: ID USER: 22 (LOG) - Linux riddlestandard 2.6.32-042stab127.2 #1 SMP Thu Jan 4 16:41:44 MSK 2018 x86_64
+19 03 2018 09:03:54 :: ID USER: 22 (LOG) - Linux riddlestandard 2.6.32-042stab127.2 #1 SMP Thu Jan 4 16:41:44 MSK 2018 x86_64
+19 03 2018 09:03:01 :: ID USER: 22 (LOG) - Linux riddlestandard 2.6.32-042stab127.2 #1 SMP Thu Jan 4 16:41:44 MSK 2018 x86_64
+19 03 2018 10:03:31 :: ID USER: 22 (LOG) - Linux riddlestandard 2.6.32-042stab127.2 #1 SMP Thu Jan 4 16:41:44 MSK 2018 x86_64
+19 03 2018 14:03:37 :: ID USER: 22 (LOG) - Linux riddlestandard 2.6.32-042stab127.2 #1 SMP Thu Jan 4 16:41:44 MSK 2018 x86_64
+20 03 2018 08:03:46 :: ID USER: 22 (LOG) - Linux riddlestandard 2.6.32-042stab127.2 #1 SMP Thu Jan 4 16:41:44 MSK 2018 x86_64
+20 03 2018 14:03:26 :: ID USER: 22 (LOG) - Linux riddlestandard 2.6.32-042stab127.2 #1 SMP Thu Jan 4 16:41:44 MSK 2018 x86_64
+20 03 2018 18:03:33 :: ID USER: 22 (LOG) - Linux riddlestandard 2.6.32-042stab127.2 #1 SMP Thu Jan 4 16:41:44 MSK 2018 x86_64
+20 03 2018 22:03:41 :: ID USER: 22 (LOG) - Linux riddlestandard 2.6.32-042stab127.2 #1 SMP Thu Jan 4 16:41:44 MSK 2018 x86_64
+21 03 2018 02:03:41 :: ID USER: 22 (LOG) - Linux riddlestandard 2.6.32-042stab127.2 #1 SMP Thu Jan 4 16:41:44 MSK 2018 x86_64
+21 03 2018 12:03:30 :: ID USER: 22 (LOG) - Linux riddlestandard 2.6.32-042stab127.2 #1 SMP Thu Jan 4 16:41:44 MSK 2018 x86_64
+21 03 2018 14:03:46 :: ID USER: 22 (LOG) - Linux riddlestandard 2.6.32-042stab127.2 #1 SMP Thu Jan 4 16:41:44 MSK 2018 x86_64
+22 03 2018 09:03:47 :: ID USER: 22 (LOG) - Linux riddlestandard 2.6.32-042stab127.2 #1 SMP Thu Jan 4 16:41:44 MSK 2018 x86_64
+22 03 2018 18:03:11 :: ID USER: 22 (LOG) - Linux riddlestandard 2.6.32-042stab127.2 #1 SMP Thu Jan 4 16:41:44 MSK 2018 x86_64
+22 03 2018 20:03:29 :: ID USER: 22 (LOG) - Linux riddlestandard 2.6.32-042stab127.2 #1 SMP Thu Jan 4 16:41:44 MSK 2018 x86_64
+22 03 2018 20:03:24 :: ID USER: 22 (LOG) - Linux riddlestandard 2.6.32-042stab127.2 #1 SMP Thu Jan 4 16:41:44 MSK 2018 x86_64
+22 03 2018 20:03:29 :: ID USER: 22 (LOG) - Linux riddlestandard 2.6.32-042stab127.2 #1 SMP Thu Jan 4 16:41:44 MSK 2018 x86_64
+22 03 2018 20:03:51 :: ID USER: 22 (LOG) - Linux riddlestandard 2.6.32-042stab127.2 #1 SMP Thu Jan 4 16:41:44 MSK 2018 x86_64
+22 03 2018 21:03:38 :: ID USER: 22 (LOG) - Linux riddlestandard 2.6.32-042stab127.2 #1 SMP Thu Jan 4 16:41:44 MSK 2018 x86_64
+22 03 2018 21:03:10 :: ID USER: 22 (LOG) - Linux riddlestandard 2.6.32-042stab127.2 #1 SMP Thu Jan 4 16:41:44 MSK 2018 x86_64
+22 03 2018 22:03:58 :: ID USER: 22 (LOG) - Linux riddlestandard 2.6.32-042stab127.2 #1 SMP Thu Jan 4 16:41:44 MSK 2018 x86_64
+22 03 2018 22:03:16 :: ID USER: 22 (LOG) - Linux riddlestandard 2.6.32-042stab127.2 #1 SMP Thu Jan 4 16:41:44 MSK 2018 x86_64
+23 03 2018 09:03:34 :: ID USER: 22 (LOG) - Linux riddlestandard 2.6.32-042stab127.2 #1 SMP Thu Jan 4 16:41:44 MSK 2018 x86_64
+23 03 2018 09:03:08 :: ID USER: 22 (LOG) - Linux riddlestandard 2.6.32-042stab127.2 #1 SMP Thu Jan 4 16:41:44 MSK 2018 x86_64
+23 03 2018 10:03:38 :: ID USER: 22 (LOG) - Linux riddlestandard 2.6.32-042stab127.2 #1 SMP Thu Jan 4 16:41:44 MSK 2018 x86_64
+23 03 2018 10:03:46 :: ID USER: 22 (LOG) - Linux riddlestandard 2.6.32-042stab127.2 #1 SMP Thu Jan 4 16:41:44 MSK 2018 x86_64
+23 03 2018 11:03:02 :: ID USER: 22 (LOG) - Linux riddlestandard 2.6.32-042stab127.2 #1 SMP Thu Jan 4 16:41:44 MSK 2018 x86_64
+23 03 2018 11:03:39 :: ID USER: 22 (LOG) - Linux riddlestandard 2.6.32-042stab127.2 #1 SMP Thu Jan 4 16:41:44 MSK 2018 x86_64
+23 03 2018 11:03:58 :: ID USER: 22 (LOG) - Linux riddlestandard 2.6.32-042stab127.2 #1 SMP Thu Jan 4 16:41:44 MSK 2018 x86_64
+24 03 2018 09:03:22 :: ID USER: 22 (LOG) - Linux riddlestandard 2.6.32-042stab127.2 #1 SMP Thu Jan 4 16:41:44 MSK 2018 x86_64
+24 03 2018 11:03:08 :: ID USER: 22 (LOG) - Linux riddlestandard 2.6.32-042stab127.2 #1 SMP Thu Jan 4 16:41:44 MSK 2018 x86_64
+24 03 2018 12:03:36 :: ID USER: 22 (LOG) - Linux riddlestandard 2.6.32-042stab127.2 #1 SMP Thu Jan 4 16:41:44 MSK 2018 x86_64
+25 03 2018 01:03:59 :: ID USER: 22 (LOG) - Linux riddlestandard 2.6.32-042stab127.2 #1 SMP Thu Jan 4 16:41:44 MSK 2018 x86_64
+25 03 2018 10:03:32 :: ID USER: 22 (LOG) - Linux riddlestandard 2.6.32-042stab127.2 #1 SMP Thu Jan 4 16:41:44 MSK 2018 x86_64
+25 03 2018 12:03:28 :: ID USER: 22 (LOG) - Linux riddlestandard 2.6.32-042stab127.2 #1 SMP Thu Jan 4 16:41:44 MSK 2018 x86_64
+25 03 2018 20:03:58 :: ID USER: 22 (LOG) - Linux riddlestandard 2.6.32-042stab127.2 #1 SMP Thu Jan 4 16:41:44 MSK 2018 x86_64
+25 03 2018 23:03:47 :: ID USER: 22 (LOG) - Linux riddlestandard 2.6.32-042stab127.2 #1 SMP Thu Jan 4 16:41:44 MSK 2018 x86_64
+25 03 2018 23:03:05 :: ID USER: 22 (LOG) - Linux riddlestandard 2.6.32-042stab127.2 #1 SMP Thu Jan 4 16:41:44 MSK 2018 x86_64

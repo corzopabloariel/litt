@@ -1,0 +1,50 @@
+<!DOCTYPE html>  
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>titulo</title> 
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/toolbox.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="login-panel">
+            <div class="row">
+                <span><img src="img/pluma.png"></span>
+                <span><h2 align="center">Ingreso al sistema</h2></span>
+                <center><span></span></center>
+            </div>
+            <div class="row">
+                <div class="login-form">
+                    <input class="form-control" type="text" name="user" placeholder="Usuario" id="user-txt">
+                    <input class="form-control" type="password" name="pass" placeholder="Contraseña" id="pass-txt">
+                    <button type="submit" class="login-btn" id="login-btn">Entrar</button>
+                    <label>
+                        <input type="checkbox" value="">
+                        <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
+                            Recordarme
+                    </label>
+                </div>
+                <span><a href="">¿Olvidó su contraseña?</a></span>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        loguear = function (){
+            login($("#user-txt").val(),$("#pass-txt").val());
+        };
+        
+        $("#login-btn").on("click",loguear);
+        $("#pass-txt").keyup(function(e){ window.e = e; if(e.keyCode == 13){ loguear(); }});
+        
+    </script>
+    
+</body>
+</html>

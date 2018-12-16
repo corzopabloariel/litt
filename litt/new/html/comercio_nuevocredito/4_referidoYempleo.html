@@ -1,0 +1,56 @@
+<div class="container"> 
+    <div class="panel-b">
+        <div class="form-d">
+        <h3 align="center">Referido</h3>
+        <div class="form-group col-xs-12">
+            <input class="form-control" type="text" placeholder="Nombre Completo" name="referido_nombre" id="referido_nombre">
+            <input class="form-control" type="text" placeholder="Teléfono Fijo" name="referido_telefono_fijo" id="referido_telefono_fijo">
+            <input class="form-control" type="text" placeholder="Teléfono Celular" name="referido_telefono_celular" id="referido_telefono_celular">
+            <input class="form-control" type="text" placeholder="Parentesco" name="referido_parentesco" id="referido_parentesco">
+        </div><br>
+        <h3 align="center">Empleo</h3>
+        <div class="form-group col-xs-12">
+            <input class="form-control" type="text" placeholder="Empresa" name="empleo_empresa" id="empleo_empresa">
+            <input class="form-control" type="text" placeholder="Teléfono Fijo" name="empleo_telefono" id="empleo_telefono">
+            <input class="form-control" type="text" placeholder="Sueldo Neto" name="empleo_sueldo" id="empleo_sueldo">
+        </div><br>
+        <h3 align="center">Producto Comprado</h3>
+        <div class="form-group col-xs-12">
+            <input class="form-control" type="text" placeholder="Ej. Suecos Block" name="producto_designacion" id="producto_nombre">
+        </div>
+        </div><br>
+        <div class="bottom-btns">
+            <button class="btn btn-primary btn-lg"  type="button">Cancelar</button>
+            <button class="btn btn-primary btn-lg next-btn" id="btn-continuar3">Continuar</button>
+        </div>
+        <div class="bottom-btns">
+            <button class="btn btn-primary btn-lg" id="btn-altaProvisoria">Alta Provisoria</button>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function f_referidoYempleo(){
+        $("#referido_nombre").val(window.litt_cliente_referido_nombre);
+        $("#referido_telefono_fijo").val(window.litt_cliente_referido_telefono_fijo);
+        $("#referido_telefono_celular").val(window.litt_cliente_referido_telefono_celular);
+        $("#referido_parentesco").val(window.litt_cliente_referido_parentesco);
+        $("#empleo_empresa").val(window.litt_cliente_empleo_empresa);
+        $("#empleo_telefono").val(window.litt_cliente_empleo_telefono);
+        $("#empleo_sueldo").val(window.litt_cliente_empleo_sueldo);
+        
+        $("#btn-continuar3").on("click",function(){
+            window.litt_cliente_referido_nombre = $("#referido_nombre").val();
+            window.litt_cliente_referido_telefono_fijo = $("#referido_telefono_fijo").val();
+            window.litt_cliente_referido_telefono_celular = $("#referido_telefono_celular").val();
+            window.litt_cliente_referido_parentesco = $("#referido_parentesco").val();
+            window.litt_cliente_empleo_empresa = $("#empleo_empresa").val();
+            window.litt_cliente_empleo_telefono = $("#empleo_telefono").val();
+            window.litt_cliente_empleo_sueldo = $("#empleo_sueldo").val();
+            window.litt_credito_producto_designacion = $("#producto_nombre").val();
+            $("#p6").hide();
+            f_domicilios();
+            $("#p8").show();
+        });
+    }
+</script>

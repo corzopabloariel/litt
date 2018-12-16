@@ -1,0 +1,29 @@
+
+<div id="p1"></div>
+<div id="p2" style="display: none;"></div>
+<div id="p3" style="display: none;"></div>
+<div id="p4" style="display: none;"></div>
+<div id="p5" style="display: none;"></div>
+<div id="p6" style="display: none;"></div>
+<div id="p7" style="display: none;"></div>
+<div id="p8" style="display: none;"></div>
+<div id="p9" style="display: none;"></div>
+
+<!-- <center><a onclick="">atras</a></center> -->
+
+<script>
+    window.litt_consultar_abandonar = true;
+    $("#p1").load("html/comercio_nuevocredito/1_consulta.html");
+    $("#p2").load("html/comercio_nuevocredito/1b_alta.html");
+    $("#p3").load("html/comercio_nuevocredito/2_resultadoNO.html");
+    $("#p4").load("html/comercio_nuevocredito/2_resultadoOK.html");
+    $("#p5").load("html/comercio_nuevocredito/3_telefonoYcuotas.html");
+    $("#p6").load("html/comercio_nuevocredito/4_referidoYempleo.html");
+    $("#p7").load("html/comercio_nuevocredito/5_altaProvisoria.html");
+    $("#p8").load("html/comercio_nuevocredito/6_domicilios.html");
+    $("#p9").load("html/comercio_nuevocredito/7_altaDefinitiva.html");
+    
+    // hago los llamados que necesito
+    credito_getScoreMinimo();
+    
+</script>

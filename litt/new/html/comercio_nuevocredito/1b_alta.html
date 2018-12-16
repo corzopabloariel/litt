@@ -1,0 +1,86 @@
+<div class="container"> 
+		<div class="panel-b">
+			<div class="row panel-title"><div class="col-sm-3 "></div><div class="col-sm-6" style="border-bottom: 2px solid #769FCD"><h2 align="center">Nuevo Credito</h2></div><div class="col-sm-3"><img src="img/credito.png"></div></div>
+			<div class="form-d">
+				<div class="col-xs-12">
+					<input class="form-control txt-dni" type="text" name="dni" placeholder="DNI" id="txt-dni" disabled>
+				</div>
+				<div class="col-xs-12">
+					<input class="form-control txt-apellido" type="text" name="apellido" placeholder=" Apellido/s" id="txt-apellido">
+				</div>
+				<div class="col-xs-12">
+					<input class="form-control txt-nombre" type="text" name="nombre" placeholder="Nombre/s" id="txt-nombre">
+				</div>
+                                <div class="col-xs-12">
+					<input class="form-control txt-fecha_nacimiento" type="text" name="fecha_nacimiento" placeholder="Fecha de nacimiento (dd/mm/yyy)" id="txt-fecha_nacimiento">
+				</div>
+                                <div class="col-xs-12">
+					<input class="form-control txt-score" type="text" name="score" placeholder="Score" id="txt-score" disabled>
+				</div>
+			</div>
+
+			<div class="row"> 	
+				<div class="bottom-btns">
+                                    <button class="btn btn-primary btn-lg" type="button">Cancelar</button>
+                                    <button class="btn btn-primary btn-lg" type="button" id="btn-alta">Consultar</button>
+				</div>
+			</div>	
+		</div>
+	</div>
+
+<script type="text/javascript">
+    // hago la carga de los elementos
+    function f_cargaAlta(){
+        // traigo la info de las variables de entorno
+        $(".txt-dni").val(window.litt_cliente_dni);
+        $(".txt-score").val(window.litt_cliente_score);
+        
+        $("#btn-alta").on("click",function(){
+            // cargo los elementos nuevos a las variables de entorno
+            window.litt_cliente_nombre = $("#txt-nombre").val();
+            window.litt_cliente_apellido = $("#txt-apellido").val();
+            window.litt_cliente_fecha_nacimiento = $("#txt-fecha_nacimiento").val();
+            $("#p2").hide();
+            if(obtenerEdad(window.litt_cliente_fecha_nacimiento) >= 18){
+                // hago el send primero para crear al cliente
+                envio = {};
+                envio["dni"] = window.litt_cliente_dni;
+                envio["apellido"] = window.litt_cliente_apellido;
+                envio["nombre"] = window.litt_cliente_nombre;
+                envio["fecha_nacimiento"] = window.litt_cliente_fecha_nacimiento;
+                send("crearCliente",envio,function(msg){
+                    window.msg = msg;
+                    if(msg.data["exito"]){
+                        f_resultadoOK();
+                        $("#p4").show();
+                    } else {
+                        window.litt_rechazo_motivo = "Error al procesar";
+                        f_resultadoNO();
+                        $("#p3").show();
+                    }
+                },function(msg){
+                    window.msg = msg;
+                    window.litt_rechazo_motivo = "Error al procesar";
+                    f_resultadoNO();
+                    $("#p3").show();
+                });
+            } else {
+                window.litt_rechazo_motivo = "edad insuficiente";
+                f_resultadoNO();
+                $("#p3").show();
+            }
+        });
+    }
+    
+    function obtenerEdad(edad){
+        birthday = edad.split("/");
+        birthday = new Date(birthday[2], birthday[1] - 1, birthday[0]);
+        return calculateAge(birthday);
+    }
+    
+    function calculateAge(birthday) {
+        var ageDifMs = Date.now() - birthday.getTime();
+        var ageDate = new Date(ageDifMs);
+        return Math.abs(ageDate.getUTCFullYear() - 1970);
+    }
+</script>

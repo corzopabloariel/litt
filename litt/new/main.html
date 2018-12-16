@@ -1,0 +1,57 @@
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Liite</title>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script type="text/javascript">
+    history.pushState(null, null, document.URL);
+    window.addEventListener('popstate', function () {
+      history.pushState(null, null, document.URL);
+    });
+</script>
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript" src="js/toolbox.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $("#header").load("html/header.php");
+        $("#footer").load("html/footer.html");
+        // cargo el componente principal, en este caso solo comercio
+        console.log(getSearchParameters().pagina);
+        if(getSearchParameters().pagina != null){
+            pagina = getSearchParameters().pagina;
+            $("#body").load("html/" + pagina + ".html");
+        } else
+            $("#body").load("html/comercio_menuprincipal.html");
+        
+    });
+</script>
+<style>
+    .form-group .form-control {
+            margin-bottom: 28px;
+    }
+
+    .data-cliente input {
+            border:none;
+            background: none;
+            height:100%;
+    }
+
+    .data-cliente h4 {
+            font-weight: 600;
+    }
+</style>
+</head>
+<body>
+    <div id="header"></div>
+    <div id="body"></div>
+    <div id="footer"></div>
+    
+</body>
+</html>

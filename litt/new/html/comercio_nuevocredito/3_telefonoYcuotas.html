@@ -1,0 +1,149 @@
+<div class="container"> 
+	<div class="panel-b">
+			<div class="row panel-title">
+				<div class="col-sm-3 "></div>
+				<div class="col-sm-6" style="border-bottom: 2px solid #769FCD"><h2 align="center">
+				Solicitud</h2></div>
+			</div>
+
+
+			<div class="col-xs-12"> <h3 align="center" style="font-weight: 600"><!-- DNI --></h3></div>
+			<div class="col-xs-12"> <h3 align="center" style="font-weight: 600"><span id="s_apellido_nombre"> <!-- APELLIDO Y NOMBRE --> </span></h3></div>
+                        <div class="col-xs-12"> <h3 align="center" style="font-weight: 600"><span id="s_fecha_nacimiento"> <!-- FECHA NACIMINETO --> </span></h3></div>
+			<div class="form-d">
+  			<div class="col-xs-12">
+  				<input class="form-control" type="text" name="telefono_fijo" placeholder="Telefono Fijo" value="" id="txt-telefono_fijo" > <!-- VALUE TELEFONO FIJO -->
+  			</div>
+			<div class="col-xs-12">
+				<input class="form-control" type="text" name="telefono_celular" placeholder="Telefono celular" value="" id="txt-telefono_celular"> <!-- VALUE TELEOFNO CELULAR -->
+			</div>
+			<div class="col-xs-12">
+				<input class="form-control" type="text" name="mail" placeholder=" Mail " value="" id="txt-mail"> <!-- VALUE EMAIL -->
+			</div>
+			<div class="form-d">
+				<div class="col-xs-6"><div class="margin-n10"><h3 align="right">PLAN</h3></div></div>
+				<div class="col-xs-6"><div class="margin-n10">
+                                        <select class="form-control" name="plan" id="op-plan">
+                                            <!-- CREO OPTIONS CON TODOS LOS PLANES Y SUS ID -->
+                                        
+                                        
+                                        </select></div></div>
+			</div>
+			<div class="col-xs-6">
+				<input class="form-control" type="text" name="monto" placeholder="Monto" id="txt-monto" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+			</div>
+			<div class="col-xs-6">
+				<div class="col-xs-6">
+					<div class="margin-n10">
+						<h3 align="right">Cuotas</h3>
+					</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="margin-n10">
+                                            <select class="form-control" name="cuotas" id="op-cuotas">
+                                                <option value="2">2</option>
+                                                <option value="4">4</option>
+                                                <option value="6">6</option>
+                                                <option value="8">8</option>
+                                                <option value="12">12</option>
+                                            </select>
+					</div>
+				</div>
+			</div>
+			
+                            
+                            
+			<div class="col-xs-12"><h3 class="t-centered" style="margin-top: 5px;">1er Vto: <span id="1er_vto">[VALOR NO DECLARADO]</span></h3></div>
+
+			<div class="col-xs-12"><h3 class="t-centered" style="margin-top: 5px;">Valor Cuotas: $<span id="val_cuota">[VALOR NO DECLARADO]</span></h3></div>
+			</div>
+                            <script type="text/javascript">
+                                
+                                
+                                
+                                function pmt(principal,tasaDeInteres,plazo){
+                                    tasaDeInteres = tasaDeInteres / 100;
+                                    return (principal/( (1- Math.pow(1+tasaDeInteres,-plazo)) / tasaDeInteres));
+                                }
+                                
+                                function calcularCuota(){
+                                    // encuentro el plan
+                                    // voy a suponer que el n° de plan es la posicion
+                                    plan_id = $("#op-plan").val();
+                                    interes = planes[plan_id]["interes_porcuota"];
+                                    tem = planes[plan_id]["tna"] / (365/30);
+                                    monto = $("#txt-monto").val();
+                                    cuotas = $("#op-cuotas").val();
+                                    // segun las correciones de christian, si el plan es == 2, vecimiento es hoy
+                                    var today = new Date();
+                                    if(plan_id == 2){
+                                        vencimiento = devolverFechaDDMMYYYY(today);
+                                    }
+                                    else{
+                                        vencimiento = devolverFechaDDMMYYYY(new Date(today.setMonth(today.getMonth() + 1)));
+                                    }
+                                    valor_cuota = pmt(monto,tem,cuotas);
+                                    $("#1er_vto").text(vencimiento);
+                                    $("#val_cuota").text(Math.round(valor_cuota));
+                                }
+                            </script>
+                            
+			<div class="row"> 	
+				<div class="bottom-btns">
+                                    <button class="btn btn-primary btn-lg" type="button">Cancelar</button>
+                                    <button class="btn btn-primary btn-lg" id="btn-continuar2">Continuar</button>
+				</div>
+			</div>	
+                        
+	</div>
+</div>
+
+<script type="text/javascript">
+    function f_cuotas(){
+        $("#s_apellido_nombre").text(window.litt_cliente_apellido + ", " + window.litt_cliente_nombre);
+        $("#s_fecha_nacimiento").text(window.litt_cliente_fecha_nacimiento);
+        $("#txt-telefono_fijo").val(window.litt_cliente_telefono_fijo);
+        $("#txt-telefono_celular").val(window.litt_cliente_telefono_celular);
+        $("#txt_mail").val(window.litt_cliente_mail);
+        
+        send("getPlanes",null,function(msg){
+            planes_get = msg.data.planes;
+            planes = [];
+            selector = $("#op-plan");
+            for(i = 1; i <= Object.keys(planes_get).length; ++i){
+                planes[planes_get[i]['id']] = planes_get[i];
+                // lleno las opciones de cuota
+                op = $('<option></option>');
+                op.attr('value',planes_get[i]['id']);
+                op.text(planes_get[i]['designacion']);
+                selector.append(op);
+            }
+        });
+        
+        $("#op-plan").on("change",function () { calcularCuota(); });
+        $("#txt-monto").on("change",function () { calcularCuota(); });
+        $("#op-cuotas").on("change",function () { calcularCuota(); });
+        
+        $("#btn-continuar2").on("click",function(){
+            // cargo a la memoria
+            window.litt_cliente_telefono_fijo = $("#txt-telefono_fijo").val();
+            window.litt_cliente_telefono_celular = $("#txt-telefono_celular").val();
+            window.litt_cliente_mail = $("#txt-mail").val();
+            window.litt_credito_plan = $("#op-plan").val();
+            window.litt_credito_cuotas = $("#op-cuotas").val();
+            window.litt_credito_monto = $("#txt-monto").val();
+            $("#p5").hide();
+            f_referidoYempleo();
+            $("#p6").show();
+        });
+    }
+    
+    function devolverFechaDDMMYYYY(fecha){
+        var dd = fecha.getDate();
+        var mm = fecha.getMonth()+1; //January is 0!
+        var yyyy = fecha.getFullYear();
+        if(dd<10) dd='0'+dd;
+        if(mm<10) mm='0'+mm;
+        return dd+'/'+mm+'/'+yyyy;
+    }
+</script>

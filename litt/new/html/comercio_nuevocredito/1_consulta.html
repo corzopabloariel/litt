@@ -1,0 +1,112 @@
+<div class="container"> 
+        <div class="panel-b">
+            <div class="row panel-title">
+                <div class="col-sm-3 "></div>
+                <div class="col-sm-6" style="border-bottom: 2px solid #769FCD">
+                    <h2 align="center">Nuevo Credito</h2>
+                </div>
+                <div class="col-sm-3">
+                    <img src="img/credito.png">
+                </div>
+            </div>
+            <div class="form-d">
+                <div class="col-xs-12">
+                    <input class="form-control txt-dni" type="text" name="dni" placeholder="DNI" id="txt-dni">
+                </div>
+                <div class="col-xs-12">
+                    <input class="form-control txt-score" type="number" name="score" placeholder="Score" id="txt-score">
+                </div>
+                <div class="row"> 	
+                    <div class="bottom-btns">
+                        <a class="btn btn-primary btn-lg" onclick="javascript:preguntarSalida();">Cancelar</a>
+                        <button class="btn btn-primary btn-lg" id="btn-consultar">Consultar</button>
+                    </div>
+                </div>	
+            </div>
+	</div>
+
+<script type="text/javascript">
+    
+    $('#btn-consultar').on('click',function(){
+        window.litt_cliente_dni = $('#txt-dni').val();
+        window.litt_cliente_score = $('#txt-score').val();
+        // llega al minimo del score para acceder?
+        if(parseInt($('#txt-score').val()) > parseInt(window.litt_verazScoreMinimo)){
+            // existe la persona?
+            send('existeCliente',
+                {'cliente_dni' : $('#txt-dni').val()},
+                function (msg){
+                    $("#p1").hide();
+                    if(msg.data['existe']){
+                        // hago el retrieve de la informacion del usuario
+                        cargarClienteAEntorno($('#txt-dni').val());
+                        $("#p4").show();
+                    }
+                    else {
+                        // le indico a la otra pagina que haga la carga
+                        f_cargaAlta();
+                        $("#p2").show();
+                    }
+                });
+            } else {
+                // no le da el score, lo rechazo
+                window.litt_rechazo_motivo = "Score insuficiente para operar";
+                f_resultadoNO();
+                $("#p1").hide();
+                $("#p3").show();
+            }
+    });
+    
+    $("#formulario").on('submit',function(){
+        window.retornar = true;
+        $(":text, :file, :checkbox, select, textarea").each(function() {
+            if($(this).val() == ""){
+                alert("Hay campos vacios, por favor, verifiquelos");
+                window.retornar = false;
+                return false;
+            }
+        });
+        return window.retornar;
+    });
+    
+    function cargarClienteAEntorno(dni){
+        send('getClienteData',{'cliente_dni': dni},function(msg){
+            window.msg = msg;
+            window.litt_cliente_apellido = msg.data.cliente['apellido'];
+            window.litt_cliente_atraso_historico = msg.data.cliente['atraso_historico'];
+            window.litt_cliente_comercio_credito = msg.data.cliente['comercio_credito'];
+            window.litt_cliente_credito_vigente = msg.data.cliente['credito_vigente'];
+            window.litt_cliente_dni = msg.data.cliente['dni'];
+            window.litt_cliente_domicilio_calle_altura = msg.data.cliente['domicilio_calle_altura'];
+            window.litt_cliente_domicilio_cpa = msg.data.cliente['domicilio_cpa'];
+            window.litt_cliente_domicilio_localidad = msg.data.cliente['domicilio_localidad'];
+            window.litt_cliente_domicilio_piso_depto = msg.data.cliente['domicilio_piso_depto'];
+            window.litt_cliente_domicilio_provincia = msg.data.cliente['domicilio_provincia'];
+            window.litt_cliente_empleo_calle_altura = msg.data.cliente['empleo_calle_altura'];
+            window.litt_cliente_empleo_cpa = msg.data.cliente['empleo_cpa'];
+            window.litt_cliente_empleo_empresa = msg.data.cliente['empleo_empresa'];
+            window.litt_cliente_empleo_localidad = msg.data.cliente['empleo_localidad'];
+            window.litt_cliente_empleo_piso_depto = msg.data.cliente['empleo_piso_depto'];
+            window.litt_cliente_empleo_provincia = msg.data.cliente['empleo_provincia'];
+            window.litt_cliente_empleo_sueldo = msg.data.cliente['empleo_sueldo'];
+            window.litt_cliente_empleo_telefono = msg.data.cliente['empleo_telefono'];
+            window.litt_cliente_estado_mora = msg.data.cliente['estado_mora'];
+            window.litt_cliente_fecha_nacimiento = msg.data.cliente['fecha_nacimiento'];
+            window.litt_cliente_id = msg.data.cliente['id'];
+            window.litt_cliente_mail = msg.data.cliente['mail'];
+            window.litt_cliente_nombre = msg.data.cliente['nombre'];
+            window.litt_cliente_observaciones = msg.data.cliente['observaciones'];
+            window.litt_cliente_referido_nombre = msg.data.cliente['referido_nombre'];
+            window.litt_cliente_referido_parentesco = msg.data.cliente['referido_parentesco'];
+            window.litt_cliente_referido_telefono_celular = msg.data.cliente['referido_telefono_celular'];
+            window.litt_cliente_referido_telefono_fijo = msg.data.cliente['referido_telefono_fijo'];
+            window.litt_cliente_telefono_celular = msg.data.cliente['telefono_celular'];
+            window.litt_cliente_telefono_fijo = msg.data.cliente['telefono_fijo'];
+            // va aca por que tiene que terminar de cargar los resultados
+            f_resultadoOK();
+        });
+    }
+    
+</script>
+
+</div>
